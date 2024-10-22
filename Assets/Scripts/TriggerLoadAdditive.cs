@@ -25,6 +25,7 @@ public class TriggerLoadAdditive : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         LoadLevelAdditive(other.gameObject);
+        gameObject.SetActive(false);
     }
 
 
