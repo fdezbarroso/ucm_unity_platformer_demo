@@ -55,7 +55,8 @@ public class SuperJumpPowerUp : MonoBehaviour
 
             // TODO Refactor 3 - Obtener el componente TrailRenderer del jugador y desactivarlo
             trailRenderer.enabled = false;
-            Destroy(gameObject);
+            _collider.enabled = true;
+            _renderer.enabled = true;
         }
     }
 }
