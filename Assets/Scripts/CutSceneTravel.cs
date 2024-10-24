@@ -32,6 +32,7 @@ public class CutSceneTravel : MonoBehaviour
     {
         Vector3 direction = Vector3.zero;
         Vector3 initialPosition = m_MainCamera.transform.position;
+        Quaternion initialRotation = m_MainCamera.transform.rotation;
         //## TODO 1 Desactivamos la cámara principal y activamos la camara del travel.
         m_Camera.gameObject.SetActive(true);
         m_MainCamera.gameObject.SetActive(false);
@@ -41,6 +42,7 @@ public class CutSceneTravel : MonoBehaviour
             //## TODO 2 Hasta que no lleguemos a la distancia mínima, movemos la cámara a la velocidad necesaria para que la transición tarde m_TravelTime segundos.
             time += Time.deltaTime;
             m_Camera.transform.position = Vector3.Lerp(initialPosition, m_Target.position, time / m_TravelTime);
+            m_Camera.transform.rotation = Quaternion.Lerp(initialRotation, m_Target.rotation, time / m_TravelTime);
             yield return new WaitForEndOfFrame();
         }
         while (time < m_TravelTime);

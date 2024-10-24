@@ -130,6 +130,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 914534948578342935, guid: 665e419daa6195941a9273d430a440f6, type: 3}
+      propertyPath: m_TravelTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 914534948578342935, guid: 665e419daa6195941a9273d430a440f6, type: 3}
+      propertyPath: m_TimeCameraStop
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2395967809216166714, guid: 665e419daa6195941a9273d430a440f6, type: 3}
       propertyPath: m_Target
       value: 
