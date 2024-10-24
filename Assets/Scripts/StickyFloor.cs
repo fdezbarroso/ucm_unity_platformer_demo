@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class StickyFloor : MonoBehaviour
 {
-
-    private Transform m_originalParent = null;
     public Transform m_transformToAttach;
+    [SerializeField]
+    private float m_inertiaThrust;
+    private Transform m_originalParent = null;
 
     void Start()
     {
         if (m_transformToAttach == null)
             m_transformToAttach = transform;
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -33,6 +34,8 @@ public class StickyFloor : MonoBehaviour
         {
             other.transform.SetParent(m_originalParent);
             attachable.IsAttached = false;
+            MovingPlatform movingPlatform = gameObject.GetComponent<MovingPlatform>();
+            other.attachedRigidbody.velocity += (movingPlatform.m_CurrentWaypoint.position - gameObject.transform.position).normalized * movingPlatform.m_MovementSpeed;
         }
     }
 }

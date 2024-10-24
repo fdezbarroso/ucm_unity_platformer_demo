@@ -37,6 +37,7 @@ public class TriggerLoadAdditive : MonoBehaviour
         if (m_GameManager != null)
         {
             m_GameManager.TriggerLoadAdditive(m_color);
+            Destroy(gameObject);
         }
     }
 }

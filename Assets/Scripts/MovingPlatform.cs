@@ -27,7 +27,8 @@ public class MovingPlatform : MonoBehaviour
     /// <summary>
     /// Waypoint hacia el que se está moviendo la plataforma
     /// </summary>
-    private Transform m_CurrentWaypoint = null;
+    [HideInInspector]
+    public Transform m_CurrentWaypoint = null;
 
     /// <summary>
     /// Distancia mínima al cuadrado (por eficiencia)
